@@ -1,0 +1,62 @@
+<form (ngSubmit)="onSubmit(f)" [formGroup]="assignment3Form" class="assignment3-form">
+    <div *ngIf="!isConfirmationMode">
+        <mat-form-field class="assignment3-field">
+            <input type="email" name="email" matInput placeholder="Email" [formControl]="emailFormControl"
+                [errorStateMatcher]="matcher" />
+            <mat-error *ngIf="emailFormControl.hasError('required')">Email is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="assignment3-field">
+            <input type="text" name="name" matInput placeholder="Name" [formControl]="nameFormControl"
+                [errorStateMatcher]="matcher" />
+            <mat-error *ngIf="nameFormControl.hasError('required')">Name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="assignment3-field">
+            <input type="text" name="address" matInput placeholder="Address (include City, State, and Zip code)" [formControl]="addressFormControl"
+                [errorStateMatcher]="matcher" />
+            <mat-error *ngIf="addressFormControl.hasError('required')">Address is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="assignment3-field">
+            <input type="tel" name="phoneNumber" matInput placeholder="Phone Number" [formControl]="phoneNumberFormControl"
+                [errorStateMatcher]="matcher" />
+            <mat-error *ngIf="phoneNumberFormControl.hasError('pattern') && !phoneNumberFormControl.hasError('required')">Must
+                be a valid US phone number (ex:555-555-5555)</mat-error>
+            <mat-error *ngIf="phoneNumberFormControl.hasError('required')">Phone Number is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="assignment3-field">
+            <input type="date" name="birthDate" matInput placeholder="Birth Date" [formControl]="birthDateFormControl"
+                [errorStateMatcher]="matcher" />
+            <mat-error *ngIf="birthDateFormControl.hasError('required')">Birth Date is required</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="assignment3-field">
+            <textarea name="comments" matInput placeholder="Comments" [formControl]="commentsFormControl"
+                [errorStateMatcher]="matcher"></textarea>
+            <mat-error *ngIf="commentsFormControl.hasError('required')">Comments is required</mat-error>
+        </mat-form-field>
+    </div>
+    <div *ngIf="isConfirmationMode">
+        {{emailFormControl.value}}
+        <br>
+        {{nameFormControl.value}}
+        <br>
+        {{addressFormControl.value}}
+        <br>
+        {{phoneNumberFormControl.value}}
+        <br>
+        {{birthDateFormControl.value}}
+        <br>
+        {{commentsFormControl.value}}
+        <mat-form-field class="assignment3-field">
+            <input type="text" matInput placeholder="Last name of the current president" [formControl]="securityQuestionFormControl"
+                [errorStateMatcher]="matcher" />
+            <mat-error *ngIf="securityQuestionFormControl.hasError('required')">Security Question is required</mat-error>
+        </mat-form-field>
+    </div>
+    <button *ngIf="!isConfirmationMode" mat-button (click)="isConfirmationMode=true" [disabled]="!assignment3Form.valid">Submit</button>
+    <button type="submit" *ngIf="isConfirmationMode" mat-raised-button [disabled]="!securityQuestionFormControl.valid">Send</button>
+</form>

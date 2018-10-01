@@ -1,0 +1,27 @@
+<button mat-raised-button	color="primary" [matMenuTriggerFor]="navigation">Menu</button>
+<mat-menu #navigation="matMenu">
+  <button mat-menu-item [routerLink]="['/landing']" routerLinkActive="router-link-active">Home</button>
+  <button mat-menu-item [matMenuTriggerFor]="myclasses">My Classes</button>
+  <button mat-menu-item [matMenuTriggerFor]="assignments">Assignments</button>
+</mat-menu>
+<mat-menu #myclasses="matMenu">
+  <button mat-menu-item [routerLink]="['/websystems']" routerLinkActive="router-link-active">Web Systems 1</button>
+</mat-menu>
+<mat-menu #assignments="matMenu">
+  <button mat-menu-item>Assignment 1</button>
+  <button mat-menu-item>Assignment 2</button>
+  <button mat-menu-item [routerLink]="['/assignment3']" routerLinkActive="router-link-active">Assignment 3</button>
+  <button mat-menu-item [routerLink]="['/assignment4']" routerLinkActive="router-link-active">Assignment 4</button>
+  <button mat-menu-item [routerLink]="['/assignment5']" routerLinkActive="router-link-active">Assignment 5</button>
+  <button mat-menu-item>Assignment 6</button>
+  <button mat-menu-item>Assignment 7</button>
+  <button mat-menu-item>Assignment 8</button>
+  <button mat-menu-item>Assignment 9</button>
+  <button mat-menu-item>Assignment 10</button>
+  <button mat-menu-item>Assignment 11</button>
+  <button mat-menu-item>Assignment 12</button>
+  <button mat-menu-item>Assignment 13</button>
+  <button mat-menu-item>Assignment 14</button>
+  <button mat-menu-item>Assignment 15</button>
+</mat-menu>
+<router-outlet></router-outlet>

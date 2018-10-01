@@ -1,0 +1,25 @@
+<h1>
+  Simple Interest Calculator
+</h1>
+<p>
+  The formula computing simple interest is: <br>
+  A = P(1 + rt)<br><br>
+  <b>A</b> = Total accumlated value (principal + interest)<br><b>P</b> = Principal amount<br><b>r</b> = rate
+  of interest per year<br><b>t</b> = time (number of years)
+</p>
+<p>
+  Input values for Principal <i>(P)</i>, interest rate <i>(r)</i> and time <i>(t in years)</i> to calculate total
+  investment after 't' years
+</p>
+
+<hr>
+<b>(P)</b> <input type='number' id='p' name='principal' value='0'><br>
+<b>(r)</b> <input type='number' id='r' name='rate' value='0'><br>
+<b>t(in years)</b><input type='number' id='t' name='time' value='0'><br>
+
+<button mat-raised-button type='button' id='calculate'>Total</button>
+<button mat-raised-button type='button' id='plot'>Graph</button>
+<hr>
+<p id='output'></p>
+<hr>
+<div id='container' style='min-width: 400px; height: 400px; margin: 0 auto'></div>

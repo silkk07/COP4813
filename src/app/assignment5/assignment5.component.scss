@@ -1,0 +1,18 @@
+#canvasHolder, input{
+    position: relative;
+  }
+
+  #circle{
+    position: relative;
+    background: black;
+  }
+
+  #spiro{
+    position: absolute;
+    left: 0;
+  }
+
+  #image{
+    position: absolute;
+    display: none;
+  }
